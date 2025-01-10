@@ -117,6 +117,17 @@ Creates a backup of the PKI directory:
 ./pki-manager.sh backup
 ```
 
+### Leaf Renewal
+
+Renews leaf (server/client) certificate
+  - Grant execution to renew-certificates.sh
+  - Add a monthly cron job to run renew-certificates.sh
+```bash
+chmod u+x renew-certificates.sh
+crontab -e
+0 0 1 * * /path/to/renew-certificates.sh >> /path/to/renewal.log 2>&1
+```
+
 ## Security Considerations
 
 1. **Root CA Protection**
